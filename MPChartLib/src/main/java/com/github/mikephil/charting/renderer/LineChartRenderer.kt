@@ -417,10 +417,10 @@ open class LineChartRenderer(
                 var endIndex = currentEndIndex
 
                 // Add a little extra to the path for drawables, larger data sets were showing space between adjacent drawables
-                // if (drawable != null) {
-                //     startIndex = max(0.0, (currentStartIndex - 1).toDouble()).toInt()
-                //     endIndex = min(endingIndex.toDouble(), (currentEndIndex + 1).toDouble()).toInt()
-                // }
+                if (drawable != null) {
+                    startIndex = max(0.0, (currentStartIndex - 1).toDouble()).toInt()
+                    endIndex = min(endingIndex.toDouble(), (currentEndIndex + 1).toDouble()).toInt()
+                }
 
                 generateFilledPath(dataSet, startIndex, endIndex, filled)
 
